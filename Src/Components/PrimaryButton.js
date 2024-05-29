@@ -6,14 +6,12 @@ import Colours from '../Constants/Colors';
 
 
 
-const LoginButton = ({title,Col,til}) => {
+const PrimaryButton = ({title,btnStyle,textStyle}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.ButtonContainer}>
-        <TouchableOpacity style={{...styles.loginButton,...Col}}>
-          <Text style={{...styles.loginButtonText,...til}}>{title}</Text>
+        <TouchableOpacity style={{...styles.loginButton,...btnStyle}}>
+          <Text style={{...styles.loginButtonText,...textStyle}}>{title}</Text>
         </TouchableOpacity>
-      </View>
     </View>
   );
 };
@@ -23,19 +21,14 @@ const LoginButton = ({title,Col,til}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent:'space-around',
     alignItems: 'center',
     
   },
-  ButtonContainer: {
-    width: wp(90),
-    height: hp(22),
-    justifyContent: 'space-evenly',
- 
-  },
+
   loginButton: {
-    width: wp(90),
-    height: hp(8),
+    width: wp(80),
+    height: hp(7),
     backgroundColor:Colours.primary,
     borderRadius: 15,
     alignItems: 'center',
@@ -44,9 +37,9 @@ const styles = StyleSheet.create({
   loginButtonText: {
     fontSize: wp(5),
     fontWeight: '700',
-    letterSpacing: 4,
+    letterSpacing: 2,
     color: Colours.white,
   },
 });
 
- export default LoginButton;
+ export default PrimaryButton;

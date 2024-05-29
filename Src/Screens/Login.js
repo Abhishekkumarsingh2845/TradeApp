@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,65 +7,59 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  StatusBar,
 } from 'react-native';
-import {hp, wp} from './Src/Utlis/Responsive';
+import {hp, wp} from '../Utlis/Responsive';
 
-const App = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
+import Strings from '../Constants/Strings';
+import Images from '../Constants/Images';
+import Colours from '../Constants/Colors';
+import Input from '../Components/Input';
+import PrimaryButton from '../Components/PrimaryButton';
 
+const Login = () => {
   return (
-    <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
-        <View style={styles.FirstCon}>
+    <ScrollView style={styles.Scroll}>
+      <View style={styles.container}>
+        <StatusBar  barStyle="dark-content" backgroundColor={Colours.white}/>
+        <View style={styles.logoContainer}>
           <Image
-            source={require('./Src/Assets/Img/MainLogo.png')}
-            style={styles.logo}
+            source={Images.primary} // place all images in single file and call it
+            style={styles.logoImage}
           />
-          <Text style={styles.Txt1}>welcome back</Text>
+          <Text style={styles.logoText}>{Strings.welcome}</Text>
         </View>
-        <View style={styles.Second}>
-          <View style={styles.Inner}>
-            <TextInput
-              placeholder="   Email"
-              placeholderTextColor="black"
-              style={styles.TextInp}
-            />
-          </View>
-          <View style={styles.outer}>
-            <TextInput
-              placeholder="   Password"
-              placeholderTextColor="black"
-              secureTextEntry={!passwordVisible}
-              style={styles.TextInp}
-            />
-            <TouchableOpacity
-              onPress={() => setPasswordVisible(!passwordVisible)}>
-              <Image
-                source={require('./Src/Assets/Img/Hide.png')}
-                style={styles.hideIcon}
-              />
-            </TouchableOpacity>
-          </View>
+        <View style={styles.placeholderContainer}>
+          <Input placeholder={Strings.email} />
+
+          <Input placeholder={Strings.password} isPassword={true} />
         </View>
-        <View style={styles.Third}>
+        <View style={styles.forgotPasswordContainer}>
           <TouchableOpacity>
-            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+            <Text style={styles.forgotPasswordText}>
+              {Strings.forgotPassword}
+            </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.ButtonContainer}>
-          <TouchableOpacity style={styles.loginButton}>
-            <Text style={styles.loginButtonText}>LOG IN</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.loginWithOtpButton}>
-            <Text style={styles.loginWithOtpButtonText}>LOG IN WITH OTP</Text>
-          </TouchableOpacity>
+          <PrimaryButton title={Strings.logIn} />
+
+          <PrimaryButton
+            title={Strings.loginOtp}
+            textStyle={{color: Colours.black}}
+            btnStyle={{
+              backgroundColor: Colours.white,
+              borderWidth: 0.3,
+              borderColor: Colours.black,
+            }}
+          />
         </View>
         <View style={styles.SignUpContainer}>
           <TouchableOpacity>
-            <Text style={styles.newUserText}>New User?</Text>
+            <Text style={styles.newUserText}>{Strings.newUser}</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={styles.signUpText}>Sign Up Now</Text>
+            <Text style={styles.signUpText}>{Strings.signUpNow}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -73,131 +67,99 @@ const App = () => {
   );
 };
 
-export default App;
+export default Login;
 
 const styles = StyleSheet.create({
-  Container: {
-    backgroundColor: '#FCFCFC',
+  container: {
+    backgroundColor: Colours.backgroundColour,
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  FirstCon: {
-    width: wp(70),
-    height: hp(36),
-    marginTop: hp(-3),
+
+  Scroll: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  logoContainer: {
+    width: wp(75),
+    height: hp(28),
+    marginTop:hp(3),
     justifyContent: 'flex-end',
     alignItems: 'center',
+    //  backgroundColor:'yellow',
+    
+
   },
-  logo: {
-    width: wp(50),
-    height: hp(20),
+  logoImage: {
+    width: wp(35),
+    height: hp(17),
     resizeMode: 'contain',
+    // backgroundColor:'blue',
+ 
   },
-  Txt1: {
-    fontSize: hp(3.5),
-    color: '#3FCC97',
+  logoText: {
+    fontSize: hp(3),
+    color: Colours.title,
     fontWeight: '900',
+    marginTop:hp(-0.5)
   },
-  Second: {
-    width: wp(90),
-    height: hp(24),
-    justifyContent: 'space-evenly',
-    marginTop: hp(3),
-  },
-  Inner: {
-    width: wp(90),
-    height: hp(7),
-    backgroundColor: 'whitesmoke',
-    borderWidth: wp(0.1),
-    borderRadius: 9,
-    borderColor: 'grey',
-  },
-  outer: {
-    width: wp(90),
-    height: hp(7),
-    backgroundColor: 'whitesmoke',
-    borderWidth: wp(0.1),
-    borderRadius: 9,
-    borderColor: 'grey',
-    flexDirection: 'row',
+  placeholderContainer: {
+    width: wp(80),
+    height: hp(15),
     justifyContent: 'space-between',
-    alignItems: 'center',
+    marginTop: hp(5),
+    // backgroundColor:'red',
+    
   },
-  TextInp: {
-    width: '90%',
-    color: 'black',
-  },
-  hideIcon: {
-    marginRight: wp(5),
-  },
-  Third: {
-    backgroundColor: 'white',
-    marginLeft: wp(53),
+
+  forgotPasswordContainer: {
+    backgroundColor: Colours.white,
+    marginLeft: wp(50),
     width: wp(44),
     height: hp(3),
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    //  backgroundColor:'blue',
+     marginLeft:wp(54),
+    marginTop:hp(2.5),
   },
   forgotPasswordText: {
-    fontSize: hp(2.4),
-    color: 'black',
-    fontWeight: '500',
+    fontSize: hp(2.3),
+    color: Colours.black,
+    fontWeight: '700',
     textDecorationLine: 'underline',
-    textDecorationColor: 'black',
+    textDecorationColor: Colours.black,
   },
   ButtonContainer: {
-    width: wp(90),
-    height: hp(22),
-    justifyContent: 'space-evenly',
+    width: wp(80),
+    height: hp(18),
+    // backgroundColor:'black',
+    marginTop:hp(2.5),
+   
+    
   },
-  loginButton: {
-    width: wp(90),
-    height: hp(8),
-    backgroundColor: 'green',
-    borderRadius: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  loginButtonText: {
-    fontSize: wp(5),
-    fontWeight: '700',
-    letterSpacing: 2,
-    color: 'white',
-  },
-  loginWithOtpButton: {
-    width: wp(90),
-    height: hp(8),
-    backgroundColor: 'white',
-    borderRadius: 15,
-    borderWidth: 0.5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  loginWithOtpButtonText: {
-    fontSize: wp(5),
-    fontWeight: '700',
-    letterSpacing: 2,
-    color: 'black',
-  },
+  
+  
   SignUpContainer: {
-    width: wp(72),
+    width: wp(49),
     height: hp(7),
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    marginTop: hp(2),
+    marginTop: hp(0.1),
+     
   },
   newUserText: {
-    fontSize: wp(5),
+    fontSize: hp(2.5),
     fontWeight: '700',
-    color: 'grey',
-    marginBottom: hp(3),
+    color: Colours.grey,
+    
   },
   signUpText: {
-    fontSize: wp(5.5),
-    fontWeight: '700',
-    color: 'black',
+    fontSize: hp(2.5),
+    fontWeight: '600',
+    color: Colours.black,
     textDecorationLine: 'underline',
-    textDecorationColor: 'black',
-    marginLeft: wp(1),
-    marginBottom: hp(3.4),
+    textDecorationColor: Colours.black,
+    
   },
 });
