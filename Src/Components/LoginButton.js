@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { wp,hp } from '../Utlis/Responsive';
+import Colours from '../Constants/Colors';
 
 
 
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   loginButton: {
     width: wp(90),
     height: hp(8),
-    backgroundColor:'green',
+    backgroundColor:Colours.primary,
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     fontSize: wp(5),
     fontWeight: '700',
     letterSpacing: 4,
-    color: 'white',
+    color: Colours.white,
   },
 });
 

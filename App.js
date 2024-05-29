@@ -13,31 +13,29 @@ import LoginButton from './Src/Components/LoginButton';
 import Password from './Src/Components/Password';
 import Strings from './Src/Constants/Strings';
 import Images from './Src/Constants/Images';
+import Colours from './Src/Constants/Colors';
+import Email from './Src/Components/Email';
 
 const App = () => {
   return (
-    <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+    <ScrollView style={styles.Scroll}>
+      <View style={styles.Container}>
         <View style={styles.FirstCon}>
           <Image
             source={Images.primary} // place all images in single file and call it
             style={styles.logo}
           />
-          <Text style={styles.Txt1}>{Strings.welcome}</Text> 
+          <Text style={styles.Txt1}>{Strings.welcome}</Text>
         </View>
         <View style={styles.Second}>
-          <View style={styles.Inner}>
-            <TextInput
-              placeholder={Strings.email}
-              placeholderTextColor="black"
-              style={styles.TextInp}
-            />
-          </View>
-          <Password  />
+          <Email  placeholder={Strings.email}/>
+          <Email  placeholder={Strings.password} />
         </View>
         <View style={styles.Third}>
           <TouchableOpacity>
-            <Text style={styles.forgotPasswordText}>{Strings.forgotPassword}</Text>
+            <Text style={styles.forgotPasswordText}>
+              {Strings.forgotPassword}
+            </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.ButtonContainer}>
@@ -45,11 +43,11 @@ const App = () => {
 
           <LoginButton
             title={Strings.loginOtp}
-            til={{color: 'black'}}
+            til={{color: Colours.black}}
             Col={{
-              backgroundColor: 'white',
+              backgroundColor: Colours.white,
               borderWidth: 0.3,
-              borderColor: 'black',
+              borderColor: Colours.black,
             }}
           />
         </View>
@@ -70,13 +68,19 @@ export default App;
 
 const styles = StyleSheet.create({
   Container: {
-    backgroundColor: '#ffffff',
+    backgroundColor: Colours.backgroundColour,
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  Scroll: {
+    flex: 1,
+    backgroundColor: 'white',
   },
   FirstCon: {
     width: wp(70),
     height: hp(36),
-    marginTop: hp(-3),
+    marginTop: hp(-1),
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
@@ -87,7 +91,7 @@ const styles = StyleSheet.create({
   },
   Txt1: {
     fontSize: hp(3.5),
-    color: '#3FCC97',
+    color: Colours.title,
     fontWeight: '900',
   },
   Second: {
@@ -99,32 +103,18 @@ const styles = StyleSheet.create({
   Inner: {
     width: wp(90),
     height: hp(7),
-    backgroundColor: 'whitesmoke',
+    backgroundColor: Colours.whitesmoke,
     borderWidth: wp(0.1),
     borderRadius: 9,
-    borderColor: 'grey',
+    borderColor: Colours.grey,
     paddingHorizontal: wp(2),
   },
-  outer: {
-    width: wp(90),
-    height: hp(7),
-    backgroundColor: 'whitesmoke',
-    borderWidth: wp(0.1),
-    borderRadius: 9,
-    borderColor: 'grey',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  TextInp: {
-    width: '90%',
-    color: 'black',
-  },
+
   hideIcon: {
     marginRight: wp(5),
   },
   Third: {
-    backgroundColor: 'white',
+    backgroundColor: Colours.white,
     marginLeft: wp(50),
     width: wp(44),
     height: hp(3),
@@ -132,10 +122,10 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     fontSize: hp(2.7),
-    color: 'black',
+    color: Colours.black,
     fontWeight: '500',
     textDecorationLine: 'underline',
-    textDecorationColor: 'black',
+    textDecorationColor: Colours.black,
   },
   ButtonContainer: {
     width: wp(90),
@@ -144,7 +134,7 @@ const styles = StyleSheet.create({
   loginButton: {
     width: wp(90),
     height: hp(8),
-    backgroundColor: 'green',
+    backgroundColor: Colours.secondary,
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
@@ -153,12 +143,12 @@ const styles = StyleSheet.create({
     fontSize: wp(5),
     fontWeight: '700',
     letterSpacing: 2,
-    color: 'white',
+    color: Colours.white,
   },
   loginWithOtpButton: {
     width: wp(90),
     height: hp(8),
-    backgroundColor: 'white',
+    backgroundColor: Colours.white,
     borderRadius: 15,
     borderWidth: 0.5,
     alignItems: 'center',
@@ -168,7 +158,7 @@ const styles = StyleSheet.create({
     fontSize: wp(5),
     fontWeight: '700',
     letterSpacing: 2,
-    color: 'black',
+    color: Colours.white,
   },
   SignUpContainer: {
     width: wp(72),
@@ -181,15 +171,15 @@ const styles = StyleSheet.create({
   newUserText: {
     fontSize: wp(5),
     fontWeight: '700',
-    color: 'grey',
+    color: Colours.grey,
     marginBottom: hp(3),
   },
   signUpText: {
     fontSize: wp(5.5),
     fontWeight: '700',
-    color: 'black',
+    color: Colours.black,
     textDecorationLine: 'underline',
-    textDecorationColor: 'black',
+    textDecorationColor: Colours.black,
     marginLeft: wp(1),
     marginBottom: hp(3.4),
   },

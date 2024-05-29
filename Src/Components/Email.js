@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View ,TextInput} from 'react-native'
 import React from 'react'
-import Strings from './Src/Constants/Strings'
-import Colours from './Src/Constants/Colors'
-import { wp,hp } from './Src/Utlis/Responsive'
+import Strings from '../Constants/Strings'
+import Colours from '../Constants/Colors'
+import { wp,hp } from '../Utlis/Responsive'
+
 
 const Email = ({placeholder}) => {
   return (
