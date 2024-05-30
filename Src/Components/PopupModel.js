@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerText: {
-    fontSize: hp(3.1),
+    fontSize: hp(2.9),
     fontWeight: '400',
     color: Colours.black,
     textAlign: 'center',
