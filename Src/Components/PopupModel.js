@@ -1,8 +1,17 @@
-import React, { useRef } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, TextInput } from 'react-native';
+import React, {useRef} from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import BottomSheet from 'react-native-raw-bottom-sheet';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { hp, wp } from '../Utlis/Responsive';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {hp, wp} from '../Utlis/Responsive';
+import Input from './Input';
+import PrimaryButton from './PrimaryButton';
 import Strings from '../Constants/Strings';
 import Colours from '../Constants/Colors';
 
@@ -39,51 +48,25 @@ const PopupModel = () => {
   );
 };
 
-const ModalContent = () => {
-  const secondInputRef = useRef(null);
-  const thirdInputRef = useRef(null);
-  const fourthInputRef = useRef(null);
-
-  const handleTextChange = (text, nextInputRef) => {
-    if (text.length === 1) {
-      nextInputRef.current.focus();
-    }
-  };
-
-  return (
-    <KeyboardAvoidingView style={styles.modalContent}>
-      <View style={styles.modalHeader}>
-        <Text style={styles.headerText}>{Strings.entercode}</Text>
-        <Text style={styles.headerText}>{Strings.enteremail}</Text>
-        <Text style={styles.headerText}>{Strings.enterphone}</Text>
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          maxLength={1}
-          ref={secondInputRef}
-          onChangeText={(text) => handleTextChange(text, thirdInputRef)}
-        />
-        <TextInput
-          style={styles.input}
-          maxLength={1}
-          ref={thirdInputRef}
-          onChangeText={(text) => handleTextChange(text, fourthInputRef)}
-        />
-        <TextInput
-          style={styles.input}
-          maxLength={1}
-          ref={fourthInputRef}
-          onChangeText={(text) => handleTextChange(text, null)} // No next input
-        />
-      </View>
-      <TouchableOpacity style={styles.resendContainer}>
-        <Text style={styles.resendText}>{Strings.didnototp} </Text>
-        <Text style={styles.resendLink}>{Strings.resendotp} </Text>
-      </TouchableOpacity>
-    </KeyboardAvoidingView>
-  );
-};
+const ModalContent = () => (
+  <KeyboardAvoidingView style={styles.modalContent}>
+    <View style={styles.modalHeader}>
+      <Text style={styles.headerText}>{Strings.entercode}</Text>
+      <Text style={styles.headerText}>{Strings.enteremail}</Text>
+      <Text style={styles.headerText}>{Strings.enterphone}</Text>
+    </View>
+    <View style={styles.inputContainer}>
+      {[...Array(4)].map((_, index) => (
+        <Input  txtinputst ={{textAlign:'center'}} maxlgth={1} key={index} containerStyle={styles.input} />
+      ))}
+    </View>
+    <PrimaryButton title={Strings.verifyotp} />
+    <TouchableOpacity style={styles.resendContainer}>
+      <Text style={styles.resendText}>{Strings.didnototp} </Text>
+      <Text style={styles.resendLink}>{Strings.resendotp} </Text>
+    </TouchableOpacity>
+  </KeyboardAvoidingView>
+);
 
 const styles = StyleSheet.create({
   root: {
@@ -131,7 +114,8 @@ const styles = StyleSheet.create({
     height: hp(7.5),
     borderRadius: 7,
     borderColor: Colours.black,
-    backgroundColor: Colours.white
+    backgroundColor:Colours.white
+   
   },
   resendContainer: {
     flexDirection: 'row',

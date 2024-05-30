@@ -1,3 +1,6 @@
+
+
+
 import { StyleSheet, TextInput, View, TouchableOpacity, Image } from 'react-native';
 import React, { useState } from 'react';
 
@@ -5,17 +8,17 @@ import Colours from '../Constants/Colors';
 import { wp, hp } from '../Utlis/Responsive';
 import Images from '../Constants/Images'; // Ensure Images are imported
 
-const Input = ({ placeholder, isPassword }) => {
+const Input = ({ placeholder, isPassword,containerStyle,maxlgth ,txtinputst}) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.emailContainer}>
-        <TextInput
+   
+      <View style={{...styles.emailContainer,...containerStyle}}>
+        <TextInput maxLength={maxlgth}
           placeholder={placeholder}
          placeholderTextColor={Colours.black}
           secureTextEntry={isPassword && !passwordVisible}
-          style={styles.TextInp}
+          style={{...styles.TextInp,...txtinputst}}
         />
         {isPassword && (
           <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
@@ -30,17 +33,16 @@ const Input = ({ placeholder, isPassword }) => {
           </TouchableOpacity>
         )}
       </View>
-    </View>
+    
   );
 };
 
 export default Input;
 
 const styles = StyleSheet.create({
-  container: {
-    marginVertical:hp(1),
-  },
+ 
   emailContainer: {
+    marginVertical:hp(1),
     height: hp(6),
     backgroundColor: Colours.whitesmoke,
     borderWidth: wp(0.1),

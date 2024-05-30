@@ -4,9 +4,7 @@ import {
   Text,
   View,
   Image,
-  TextInput,
   TouchableOpacity,
-  ScrollView,
   StatusBar,
 } from 'react-native';
 import {hp, wp} from '../Utlis/Responsive';
@@ -60,7 +58,6 @@ const Login = () => {
             <Text style={styles.signUpText}>{Strings.signUpNow}</Text>
           </TouchableOpacity>
         </View>
-       
       </KeyboardAwareScrollView>
     </View>
   );
@@ -82,14 +79,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-
-    //  backgroundColor:'yellow',
   },
   logoImage: {
-    // width: wp(35),
     height: hp(17),
     resizeMode: 'contain',
-    // backgroundColor:'blue',
   },
   logoText: {
     fontSize: hp(3),
@@ -109,9 +102,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     textDecorationColor: Colours.black,
     textAlign: 'right',
-  },
-  ButtonContainer: {
-    marginTop: hp(2.5),
   },
 
   SignUpContainer: {
