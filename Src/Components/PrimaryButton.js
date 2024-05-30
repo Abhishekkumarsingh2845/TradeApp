@@ -8,31 +8,25 @@ import Colours from '../Constants/Colors';
 
 const PrimaryButton = ({title,btnStyle,textStyle}) => {
   return (
-    <View style={styles.container}>
+  
         <TouchableOpacity style={{...styles.loginButton,...btnStyle}}>
           <Text style={{...styles.loginButtonText,...textStyle}}>{title}</Text>
         </TouchableOpacity>
-    </View>
+    
   );
 };
 
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent:'space-around',
-    alignItems: 'center',
-    
-  },
-
   loginButton: {
-    width: wp(80),
     height: hp(7),
+    width:'100%',
     backgroundColor:Colours.primary,
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:hp(2)
   },
   loginButtonText: {
     fontSize: wp(5),

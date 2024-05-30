@@ -38,11 +38,9 @@ export default Input;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    marginVertical:hp(1),
   },
   emailContainer: {
-    width: wp(80),
     height: hp(6),
     backgroundColor: Colours.whitesmoke,
     borderWidth: wp(0.1),
@@ -54,13 +52,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp(2),
   },
   TextInp: {
-    width: '90%',
+    flex:1,
     color:Colours.black,
    
   },
   hideIcon: {
-    marginRight: wp(5),
-    width: wp(6.5),
-    height: hp(3),
+    height:hp(3.6),
+    width:hp(3.6)
   },
 });
