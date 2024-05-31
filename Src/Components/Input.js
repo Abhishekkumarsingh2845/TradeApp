@@ -20,6 +20,7 @@ const Input = ({ placeholder, isPassword,containerStyle,maxlgth ,txtinputst}) =>
           secureTextEntry={isPassword && !passwordVisible}
           style={{...styles.TextInp,...txtinputst}}
         />
+        
         {isPassword && (
           <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
             <Image

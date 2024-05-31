@@ -13,7 +13,10 @@ const Strings = {
   verifyotp:'VERIFY OTP',
   didnototp:'Didn’t receive OTP?',
   resendotp:'Resend OTP',
-  verifyotp:'VERIFY OTP'
+  verifyotp:'VERIFY OTP',
+  name:'Name',
+  company:'Company',
+  confirmpassword:'Confirm Password',
 
 };
 
