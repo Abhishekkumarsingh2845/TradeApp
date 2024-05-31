@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import React from 'react';
 import { wp,hp } from '../Utlis/Responsive';
 import Colours from '../Constants/Colors';
@@ -6,10 +6,13 @@ import Colours from '../Constants/Colors';
 
 
 
-const PrimaryButton = ({title,btnStyle,textStyle}) => {
+
+const PrimaryButton = ({title,btnStyle,textStyle,onPress}) => {
   return (
   
-        <TouchableOpacity style={{...styles.loginButton,...btnStyle}}>
+        <TouchableOpacity style={{...styles.loginButton,...btnStyle }} onPress={()=>{
+           onPress()
+        }}>
           <Text style={{...styles.loginButtonText,...textStyle}}>{title}</Text>
         </TouchableOpacity>
     

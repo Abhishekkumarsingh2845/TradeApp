@@ -15,8 +15,12 @@ import Colours from '../Constants/Colors';
 import Input from '../Components/Input';
 import PrimaryButton from '../Components/PrimaryButton';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import BottomSheet from 'react-native-raw-bottom-sheet';
+import OTPModal from '../Components/OTPModal';
 
 const Login = () => {
+  const bottomSheetRef = React.useRef(null);
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={Colours.white} />
@@ -41,6 +45,7 @@ const Login = () => {
         <PrimaryButton title={Strings.logIn} />
 
         <PrimaryButton
+        onPress={()=> bottomSheetRef?.current?.open()}
           title={Strings.loginOtp}
           textStyle={{color: Colours.black}}
           btnStyle={{
@@ -59,6 +64,22 @@ const Login = () => {
           </TouchableOpacity>
         </View>
       </KeyboardAwareScrollView>
+
+      <BottomSheet
+          ref={bottomSheetRef}
+          height={hp(49)}
+          openDuration={250}
+          closeOnDragDown={true}
+          draggable={true}
+          customStyles={{
+            container: {
+              borderTopLeftRadius: 40,
+              borderTopRightRadius: 40,
+            },
+          }}>
+          <OTPModal/>
+        </BottomSheet>
+
     </View>
   );
 };
