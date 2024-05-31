@@ -18,7 +18,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import BottomSheet from 'react-native-raw-bottom-sheet';
 import OTPModal from '../Components/OTPModal';
 
-const Login = () => {
+const SignIn = ({navigation}) => {
   const bottomSheetRef = React.useRef(null);
 
   return (
@@ -45,7 +45,7 @@ const Login = () => {
         <PrimaryButton title={Strings.logIn} />
 
         <PrimaryButton
-        onPress={()=> bottomSheetRef?.current?.open()}
+          onPress={() => bottomSheetRef?.current?.open()}
           title={Strings.loginOtp}
           textStyle={{color: Colours.black}}
           btnStyle={{
@@ -59,32 +59,16 @@ const Login = () => {
           <TouchableOpacity>
             <Text style={styles.newUserText}>{Strings.newUser}</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
             <Text style={styles.signUpText}>{Strings.signUpNow}</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAwareScrollView>
-
-      <BottomSheet
-          ref={bottomSheetRef}
-          height={hp(49)}
-          openDuration={250}
-          closeOnDragDown={true}
-          draggable={true}
-          customStyles={{
-            container: {
-              borderTopLeftRadius: 40,
-              borderTopRightRadius: 40,
-            },
-          }}>
-          <OTPModal/>
-        </BottomSheet>
-
     </View>
   );
 };
 
-export default Login;
+export default SignIn;
 
 const styles = StyleSheet.create({
   container: {
