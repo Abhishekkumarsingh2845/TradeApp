@@ -10,9 +10,7 @@ import Colours from '../Constants/Colors';
 const PrimaryButton = ({title,btnStyle,textStyle,onPress}) => {
   return (
   
-        <TouchableOpacity style={{...styles.loginButton,...btnStyle }} onPress={()=>{
-           onPress()
-        }}>
+        <TouchableOpacity style={{...styles.loginButton,...btnStyle }} onPress={()=>{onPress()}}>
           <Text style={{...styles.loginButtonText,...textStyle}}>{title}</Text>
         </TouchableOpacity>
     

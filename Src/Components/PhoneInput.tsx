@@ -27,11 +27,11 @@ const App = () => {
         }}
         withDarkTheme
         withShadow
-        autoFocus
         containerStyle={styles.phoneInputContainer}
         textContainerStyle={styles.textContainer}
         textInputStyle={styles.textInput}
         flagButtonStyle={styles.flagButton}
+        placeholder="    "
       />
     </View>
   );

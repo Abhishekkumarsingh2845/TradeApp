@@ -17,6 +17,39 @@ const Strings = {
   name:'Name',
   company:'Company',
   confirmpassword:'Confirm Password',
+  section :' Section 1 : AUSTRALIAN COMPANY IDENTIFICATION PROCEDURE',
+  general:'General Information',
+  fullname:'Full name as registered by ASIC',
+  tradingname:'Trading name',
+  acn:'ACN',
+  abn:'ABN',
+  registered:" Registered Office Address",
+  po:'PO Box is NOT acceptable',
+  street:'Street',
+  Suburb:'Suburb',
+  state:'State',
+  PostCode:'PostCode',
+  Country:'Country',
+  MobileNumber:'Mobile Number',
+  FaxNumber:'Fax Number',
+  Email:'Email',
+  AlternateNumber:'Alternate Number',
+  DocumentUpload:'Document Upload',
+  submit:'SUBMIT',
+  entername:'Enter Name',
+
+
+
+
+
+
+
+
+
+  
+
+
+
 
 };
 
