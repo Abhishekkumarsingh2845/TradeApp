@@ -129,7 +129,7 @@ const FormPoint = ({navigation}) => {
             tick this box ().
           </Text>
         </View>
-        <PrimaryButton title="SUBMIT" />
+        <PrimaryButton title="SUBMIT" onPress={()=>navigation.navigate('Perference')} />
         <View style={{height:40}}/>
       </KeyboardAwareScrollView>
     </View>

@@ -37,6 +37,19 @@ const Strings = {
   DocumentUpload:'Document Upload',
   submit:'SUBMIT',
   entername:'Enter Name',
+  perference:'Preference Settings',
+  payment:'Payment Terms',
+  s1:'I would like to make payment after delivery',
+  s2:'I can make payment in advance',
+  s3:'Advance payment is mandatory',
+  s4:'I am Flexible with Payment',
+  s5:'I would like to decide at the time of deal',
+  s6:'I can accept payment after delivery',
+  primaryperson:'Primary Contact Person',
+  secondaryperson:'Secondary Contact Person',
+  otherperson:'Other Contact Person',
+
+  
 
 
 
