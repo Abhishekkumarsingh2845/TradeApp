@@ -6,6 +6,7 @@ import SearchBar from '../Components/SearchBar';
 import SelectPeople from '../Components/SelectPeople';
 import SkipDone from '../Components/SkipDone';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const SignUp2 = () => {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -19,7 +20,9 @@ const SignUp2 = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
        <StatusBar barStyle="dark-content" backgroundColor={Colours.white} />
        <View>
+        <TouchableOpacity>
         <Image source={require("./../Assets/Img/backarrow.png")} style={{width:20,height:20,resizeMode:'contain',margin:20}}/>
+        </TouchableOpacity>
        </View>
       <View>
         <ScrollView horizontal>

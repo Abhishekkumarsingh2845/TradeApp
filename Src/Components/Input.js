@@ -8,7 +8,7 @@ import Colours from '../Constants/Colors';
 import { wp, hp } from '../Utlis/Responsive';
 import Images from '../Constants/Images'; // Ensure Images are imported
 
-const Input = ({ placeholder, isPassword,containerStyle,maxlgth ,txtinputst}) => {
+const Input = ({ placeholder, isPassword,containerStyle,maxlgth ,txtinputst,placeholderColour}) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ const Input = ({ placeholder, isPassword,containerStyle,maxlgth ,txtinputst}) =>
       <View style={{...styles.emailContainer,...containerStyle}}>
         <TextInput maxLength={maxlgth}
           placeholder={placeholder}
-         placeholderTextColor={Colours.black}
+         placeholderTextColor={placeholderColour}
           secureTextEntry={isPassword && !passwordVisible}
           style={{...styles.TextInp,...txtinputst}}
         />
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
  
   emailContainer: {
     marginVertical:hp(1),
-    height: hp(6),
+    height: hp(7.5),
     backgroundColor: Colours.whitesmoke,
     borderWidth: wp(0.1),
     borderRadius: 9,
