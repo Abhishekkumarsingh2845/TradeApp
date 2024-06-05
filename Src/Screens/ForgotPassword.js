@@ -1,20 +1,19 @@
 import {
-  Image,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   StatusBar,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-
 import Colours from '../Constants/Colors';
 import Input from '../Components/Input';
 import {hp, wp} from '../Utlis/Responsive';
 import PrimaryButton from '../Components/PrimaryButton';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
-const ForgotPasswordEmail = ({navigation}) => {
+const ForgotPassword = () => {
   return (
     <View
       style={{
@@ -30,44 +29,30 @@ const ForgotPasswordEmail = ({navigation}) => {
             height: hp(50),
           }}>
           <Image
-            source={require('./../Assets/Img/forgotpassword.png')}
+            source={require('./../Assets/Img/repair.png')}
             style={{width: '80%', height: '80%', resizeMode: 'contain'}}
           />
         </View>
-        <View style={{paddingHorizontal: wp(3), marginTop: hp(-7)}}>
+        <View style={{paddingHorizontal: wp(3), marginTop: hp(-8)}}>
           <Text
             style={{fontSize: hp(3), color: Colours.black, fontWeight: 'bold'}}>
-            Forgot Password
+            Change New Password
           </Text>
           <Input
-            placeholder={'Enter the Email Address or Phone Number '}
+            placeholder={'Enter New Password'}
             placeholderColour="grey"
-            containerStyle={{marginVertical: 17}}
+            containerStyle={{marginTop: hp(2)}}
           />
-          <TouchableOpacity>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                color: Colours.black,
-                textDecorationLine: 'underline',
-                fontSize: hp(2.5),
-              }}>
-              Remember the password
-              <Text
-                style={{
-                  color: Colours.lightgreen,
-                  textDecorationLine: 'underline',
-                }}>
-                {' '}
-                Sign in
-              </Text>
-            </Text>
-          </TouchableOpacity>
+          <Input
+            placeholder={'Confirm New Password'}
+            placeholderColour="grey"
+            containerStyle={{marginTop: hp(1)}}
+          />
         </View>
         <PrimaryButton
-          title={'NEXT'}
+          title={'UPDATE'}
           btnStyle={{
-            marginTop: 100,
+            marginTop: hp(22),
             width: '95%',
             alignSelf: 'center',
           }}
@@ -80,6 +65,6 @@ const ForgotPasswordEmail = ({navigation}) => {
   );
 };
 
-export default ForgotPasswordEmail;
+export default ForgotPassword;
 
 const styles = StyleSheet.create({});

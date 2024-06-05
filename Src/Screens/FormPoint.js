@@ -29,21 +29,21 @@ const FormPoint = ({navigation}) => {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{Strings.section}</Text>
           <Text style={styles.sectionSubtitle}>{Strings.general}</Text>
-          <Input placeholder={Strings.fullname} />
-          <Input placeholder={Strings.tradingname} />
-          <Input placeholder={Strings.acn} />
-          <Input placeholder={Strings.abn} />
+          <Input placeholder={Strings.fullname} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.tradingname} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.acn} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.abn}  placeholderColour={Colours.black}/>
         </View>
         <View style={styles.section}>
           <Text style={styles.sectionSubtitle}>
             {Strings.registered}
             <Text style={styles.inlineText}>(PO Box is NOT acceptable)</Text>
           </Text>
-          <Input placeholder={Strings.street} />
-          <Input placeholder={Strings.Suburb} />
-          <Input placeholder={Strings.state} />
-          <Input placeholder={Strings.PostCode} />
-          <Input placeholder={Strings.Country} />
+          <Input placeholder={Strings.street} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.Suburb} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.state}  placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.PostCode} placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.Country} placeholderColour={Colours.black} />
         </View>
         <View style={styles.section}>
           <Text style={styles.sectionSubtitle}>
@@ -52,19 +52,20 @@ const FormPoint = ({navigation}) => {
               (If any)(PO Box is Not acceptable)
             </Text>
           </Text>
-          <Input placeholder={Strings.street} />
-          <Input placeholder={Strings.state} />
-          <Input placeholder={Strings.Suburb} />
-          <Input placeholder={Strings.PostCode} />
-          <Input placeholder={Strings.Country} />
-          <Input placeholder={Strings.MobileNumber} />
-          <Input placeholder={Strings.FaxNumber} />
-          <Input placeholder={Strings.email} />
-          <Input placeholder="Alternate Number" />
+          <Input placeholder={Strings.street} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.state}  placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.Suburb} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.PostCode}  placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.Country}  placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.MobileNumber} placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.FaxNumber} placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.email} placeholderColour={Colours.black}/>
+          <Input placeholder="Alternate Number" placeholderColour={Colours.black} />
           <View style={styles.uploadContainer}>
             <Input
               placeholder="Document Upload"
               containerStyle={styles.uploadInput}
+              placeholderColour={Colours.black}
             />
             <TouchableOpacity>
               <Image source={Images.upload} style={styles.uploadIcon} />
@@ -117,7 +118,7 @@ const FormPoint = ({navigation}) => {
               for Public Companies) Provide the names of all directors.
             </Text>
           </Text>
-          <Input placeholder="Enter Name" />
+          <Input placeholder="Enter Name" placeholderColour={Colours.black} />
           <TouchableOpacity activeOpacity={0.9}>
             <View style={styles.addMoreContainer}>
               <Image source={Images.add} style={styles.addMoreIcon} />

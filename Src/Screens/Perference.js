@@ -35,25 +35,25 @@ const Preference = ({navigation}) => {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{Strings.primaryperson}</Text>
             <View style={{marginTop: hp(1.5)}}>
-              <Input placeholder="Name" />
-              <Input placeholder="Email" />
-              <Input placeholder="Contact Number" />
+              <Input placeholder="Name" placeholderColour={Colours.black}/>
+              <Input placeholder="Email" placeholderColour={Colours.black} />
+              <Input placeholder="Contact Number"placeholderColour={Colours.black} />
             </View>
           </View>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{Strings.secondaryperson}</Text>
             <View style={{marginTop: hp(1.5)}}>
-              <Input placeholder="Name" />
-              <Input placeholder="Email" />
-              <Input placeholder="Contact Number" />
+              <Input placeholder="Name"  placeholderColour={Colours.black}/>
+              <Input placeholder="Email" placeholderColour={Colours.black} />
+              <Input placeholder="Contact Number" placeholderColour={Colours.black} />
             </View>
           </View>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{Strings.otherperson}</Text>
             <View style={{marginTop: hp(1.5)}}>
-              <Input placeholder="Name" />
-              <Input placeholder="Email" />
-              <Input placeholder="Contact Number" />
+              <Input placeholder="Name"  placeholderColour={Colours.black}/>
+              <Input placeholder="Email" placeholderColour={Colours.black}/>
+              <Input placeholder="Contact Number" placeholderColour={Colours.black}/>
             </View>
           </View>
         </KeyboardAwareScrollView>

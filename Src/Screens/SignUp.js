@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Input from '../Components/Input';
 import Strings from '../Constants/Strings';
-
+import Colours from '../Constants/Colors';
 import Colors from '../Constants/Colors';
 import PrimaryButton from '../Components/PrimaryButton';
 import PhoneInput from '../Components/PhoneInput';
@@ -30,15 +30,15 @@ const SignUp = ({navigation}) => {
       <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
       <KeyboardAwareScrollView>
         <View style={styles.inputContainer}>
-          <Input placeholder={Strings.name} />
-          <Input placeholder={Strings.email} />
+          <Input placeholder={Strings.name} placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.email} placeholderColour={Colours.black} />
 
           <View style={styles.phoneInputContainer}>
-            <PhoneInput />
+            <PhoneInput  />
           </View>
 
-          <Input placeholder={Strings.password} isPassword={true} />
-          <Input placeholder={Strings.confirmpassword} isPassword={true} />
+          <Input placeholder={Strings.password} isPassword={true}  placeholderColour={Colours.black}/>
+          <Input placeholder={Strings.confirmpassword} isPassword={true} placeholderColour={Colours.black} />
         </View>
         <View style={styles.disclaimerContainer}>
           <TouchableOpacity
