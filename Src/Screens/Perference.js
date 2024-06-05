@@ -58,7 +58,7 @@ const Preference = ({navigation}) => {
           </View>
         </KeyboardAwareScrollView>
       </View>
-      <SkipDone />
+      <SkipDone onDonePress={()=>{navigation.navigate('SignUp2')}} />
     </View>
   );
 };

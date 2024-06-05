@@ -2,13 +2,13 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { hp, wp } from './../Utlis/Responsive';
 
-const SkipDone = () => {
+const SkipDone = ({onDonePress}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
         <Text style={styles.text}>SKIP</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>{onDonePress()}}>
         <Text style={styles.text}>DONE</Text>
       </TouchableOpacity>
     </View>
