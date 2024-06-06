@@ -40,7 +40,7 @@ const ForgotPasswordEmail = ({navigation}) => {
             Forgot Password
           </Text>
           <Input
-            placeholder={'Enter the Email Address or Phone Number '}
+            placeholder={'Enter the Email Address or Phone Number'}
             placeholderColour="grey"
             containerStyle={{marginVertical: 17}}
           />

@@ -72,6 +72,7 @@ const ForgotPasswordEmail2 = ({navigation}) => {
                 alignSelf: 'center',
                
               }}
+              onPress={()=>(navigation.navigate('ForgotPassword'))}
             />
           </KeyboardAwareScrollView>
         </View>

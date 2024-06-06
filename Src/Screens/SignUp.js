@@ -28,17 +28,28 @@ const SignUp = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
-      <KeyboardAwareScrollView>
+<KeyboardAwareScrollView>
         <View style={styles.inputContainer}>
-          <Input placeholder={Strings.name} placeholderColour={Colours.black}/>
-          <Input placeholder={Strings.email} placeholderColour={Colours.black} />
+          <Input placeholder={Strings.name} placeholderColour={Colours.black} />
+          <Input
+            placeholder={Strings.email}
+            placeholderColour={Colours.black}
+          />
 
           <View style={styles.phoneInputContainer}>
-            <PhoneInput  />
+            <PhoneInput />
           </View>
 
-          <Input placeholder={Strings.password} isPassword={true}  placeholderColour={Colours.black}/>
-          <Input placeholder={Strings.confirmpassword} isPassword={true} placeholderColour={Colours.black} />
+          <Input
+            placeholder={Strings.password}
+            isPassword={true}
+            placeholderColour={Colours.black}
+          />
+          <Input
+            placeholder={Strings.confirmpassword}
+            isPassword={true}
+            placeholderColour={Colours.black}
+          />
         </View>
         <View style={styles.disclaimerContainer}>
           <TouchableOpacity
@@ -61,6 +72,11 @@ const SignUp = ({navigation}) => {
         <View style={styles.buttonContainer}>
           <PrimaryButton
             title="SIGN UP NOW"
+            btnStyle={{
+              marginTop: hp(-8),
+              width: '100%',
+              alignSelf: 'center',
+            }}
             onPress={() => navigation.navigate('FormPoint')}
           />
         </View>
@@ -74,7 +90,7 @@ export default SignUp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: 'white',
     paddingHorizontal: wp(3.5),
   },
   inputContainer: {
