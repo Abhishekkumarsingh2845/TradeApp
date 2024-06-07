@@ -12,6 +12,7 @@ import {hp, wp} from '../Utlis/Responsive';
 import PrimaryButton from '../Components/PrimaryButton';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
+
 const ForgotPassword = ({navigation}) => {
   return (
     <View style={styles.container}>
