@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-import { hp, wp } from '../Utlis/Responsive';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {hp, wp} from '../Utlis/Responsive';
+import Slider from '@react-native-community/slider';
 
 const SellModalContent = () => {
   const [activeButton, setActiveButton] = useState(null);
@@ -47,7 +48,13 @@ const SellModalContent = () => {
             activeButton === 'sell' ? styles.activeButton : null,
           ]}
           onPress={handleSellPress}>
-          <Text style={[styles.buttonText, activeButton === 'sell' ? styles.whiteText : styles.blackText]}>SELL</Text>
+          <Text
+            style={[
+              styles.buttonText,
+              activeButton === 'sell' ? styles.whiteText : styles.blackText,
+            ]}>
+            SELL
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -55,11 +62,111 @@ const SellModalContent = () => {
             activeButton === 'buy' ? styles.activeButton : null,
           ]}
           onPress={handleBuyPress}>
-          <Text style={[styles.buttonText, activeButton === 'buy' ? styles.whiteText : styles.blackText]}>BUY</Text>
+          <Text
+            style={[
+              styles.buttonText,
+              activeButton === 'buy' ? styles.whiteText : styles.blackText,
+            ]}>
+            BUY
+          </Text>
         </TouchableOpacity>
       </View>
-      <View style={{marginTop:hp(5),}}>
-        <Text style={{backgroundColor:'green'}}>e cen c</Text>
+      <View
+        style={{
+          marginTop: hp(5),
+          borderWidth: 0.3,
+          borderRadius: 15,
+          borderColor: 'grey',
+          marginHorizontal:5,
+         
+          height: '35%',
+        }}>
+        <View
+          style={{
+            paddingHorizontal: 12,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: hp(2),
+          }}>
+          <View style={{justifyContent: 'space-between'}}>
+            <Text style={{fontSize: hp(2.7), color: 'black'}}>Price</Text>
+            <View style={{alignItems: 'flex-start', marginTop: hp(2)}}>
+              <Image
+                source={require('./../Assets/Img/sub.png')}
+                style={{width: 35, height: 35}}
+              />
+            </View>
+          </View>
+          <View
+            style={{
+              alignSelf: 'center',
+              marginTop: 35,
+             
+            }}>
+            <Slider style={{width: 170}} 
+            minimumTrackTintColor={"#3FCC97"} 
+            maximumTrackTintColor={"grey"}
+            thumbTintColor={'#3FCC97'}/>
+          </View>
+          <View style={{justifyContent: 'space-between'}}>
+            <Text style={{fontSize: hp(2.7), color: 'black'}}>$2,509.75</Text>
+            <View style={{alignItems: 'flex-end'}}>
+              <Image
+                source={require('./../Assets/Img/plus.png')}
+                style={{width: 35, height: 35}}
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={{
+            paddingHorizontal: 12,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: hp(2),
+          }}>
+          <View style={{justifyContent: 'space-between'}}>
+            <Text style={{fontSize: hp(2.7), color: 'black'}}>Quantity</Text>
+            <View style={{alignItems: 'flex-start', marginTop: hp(2)}}>
+              <Image
+                source={require('./../Assets/Img/sub.png')}
+                style={{width: 35, height: 35}}
+              />
+            </View>
+          </View>
+          <View
+            style={{
+              alignSelf: 'center',
+              marginTop: 35,
+             
+            }}>
+            <Slider style={{width: 170}} 
+            minimumTrackTintColor={"#3FCC97"} 
+            maximumTrackTintColor={"grey"}
+            thumbTintColor={'#3FCC97'}/>
+          </View>
+          <View style={{justifyContent: 'space-between'}}>
+            <Text style={{fontSize: hp(2.7), color: 'black'}}>100</Text>
+            <View style={{alignItems: 'flex-end'}}>
+              <Image
+                source={require('./../Assets/Img/plus.png')}
+                style={{width: 35, height: 35}}
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View style={{marginTop:hp(4),borderWidth:1,borderRadius:10,height:40,marginHorizontal:4,flexDirection:'row',alignItems:'center'}}>
+    <Image source ={require("./../Assets/Img/openBook.png")} style={{width:25,height:25,resizeMode:'contain',marginLeft:15}}/>
+    <Text style={{color:'black',marginLeft:10}}>Order Book</Text>
+    <Image source={require("./../Assets/Img/chevron_right.png")} style={{width:20,height:20,resizeMode:'contain',position:'absolute',right:10}}/>
+      </View>
+      <View style={{marginTop:hp(2),flexDirection:'row',alignSelf:'center',}}>
+        <Text style={{color:'black'}}>Advanced Options</Text>
+        <Image source={require("./../Assets/Img/chevron_right.png")} style={{width:20,height:20,resizeMode:'contain'}}/>
+      </View>
+      <View style={{marginTop:hp(2),backgroundColor:'red',marginHorizontal:15}}>
+<Text>aaa</Text>
       </View>
     </View>
   );
@@ -80,8 +187,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     resizeMode: 'contain',
   },
   centeredTextContainer: {
@@ -113,7 +220,7 @@ const styles = StyleSheet.create({
   smallText: {
     fontSize: 12,
     color: 'black',
-    fontWeight:'400',
+    fontWeight: '400',
   },
   greySmallText: {
     fontSize: hp(1.8),
@@ -127,12 +234,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: hp(5),
     width: '95%',
-    height: '8%',
+
     borderRadius: 32,
     alignItems: 'center',
     alignSelf: 'center',
     backgroundColor: 'whitesmoke',
-    elevation:10,
+    elevation: 10,
   },
   button: {
     flex: 1,
@@ -156,5 +263,4 @@ const styles = StyleSheet.create({
   activeButton: {
     backgroundColor: 'red',
   },
- 
 });
