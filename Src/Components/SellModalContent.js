@@ -6,6 +6,8 @@ import Colours from '../Constants/Colors';
 
 const SellModalContent = () => {
   const [activeButton, setActiveButton] = useState(null);
+  const [price, setPrice] = useState(0);
+  const [Quantity, setQunatity] = useState(0);
 
   const handleSellPress = () => {
     setActiveButton('sell');
@@ -73,94 +75,115 @@ const SellModalContent = () => {
 
       <View
         style={{
-          marginTop: hp(5),
-          borderWidth: 0.3,
-          borderRadius: 15,
-          borderColor: 'grey',
-          marginHorizontal: 5,
-          height: '35%',
+          width: '95%',
+          paddingVertical: hp(1),
+          backgroundColor: 'whitesmoke',
+          alignContent: 'center',
+          justifyContent: 'center',
+          marginVertical: hp(3),
+          marginHorizontal: wp(4),
+          elevation: 10,
+          borderRadius: 10,
         }}>
         <View
           style={{
-            paddingHorizontal: 12,
-            justifyContent: 'space-between',
-            marginTop: hp(2),
+            borderRadius: 15,
+            borderColor: 'grey',
+            marginHorizontal: 5,
           }}>
           <View
             style={{
-              flexDirection: 'row',
-              paddingHorizontal: hp(2),
+              paddingHorizontal: 12,
               justifyContent: 'space-between',
-              alignItems: 'center',
-              paddingHorizontal: wp(1),
+              marginTop: hp(1),
             }}>
-            <Text style={{fontSize: hp(3), color: 'black'}}>Price</Text>
-            <Text style={{fontSize: hp(3), color: 'black'}}>$2509.75</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                paddingHorizontal: hp(2),
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingHorizontal: wp(1),
+              }}>
+              <Text style={{fontSize: hp(3), color: 'black'}}>Price</Text>
+              <Text style={{fontSize: hp(3), color: 'black'}}>${price}</Text>
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginTop: hp(2),
+              }}>
+              <Image
+                source={require('./../Assets/Img/sub.png')}
+                style={{width: 35, height: 35}}
+              />
+              <Slider
+                style={{width: 170, height: 30}}
+                minimumTrackTintColor={'#3FCC97'}
+                maximumTrackTintColor={'grey'}
+                thumbTintColor={'#3FCC97'}
+                minimumValue={0}
+                maximumValue={5000}
+                value={price}
+                onValueChange={setPrice}
+                step={1}
+              />
+              <Image
+                source={require('./../Assets/Img/plus.png')}
+                style={{width: 35, height: 35}}
+              />
+            </View>
           </View>
           <View
             style={{
-              flexDirection: 'row',
+              paddingHorizontal: 12,
               justifyContent: 'space-between',
-              alignItems: 'center',
               marginTop: hp(2),
             }}>
-            <Image
-              source={require('./../Assets/Img/sub.png')}
-              style={{width: 35, height: 35}}
-            />
-            <Slider
-              style={{width: 170, height: 30}}
-              minimumTrackTintColor={'#3FCC97'}
-              maximumTrackTintColor={'grey'}
-              thumbTintColor={'#3FCC97'}
-            />
-            <Image
-              source={require('./../Assets/Img/plus.png')}
-              style={{width: 35, height: 35}}
-            />
-          </View>
-        </View>
-        <View
-          style={{
-            paddingHorizontal: 12,
-            justifyContent: 'space-between',
-            marginTop: hp(2),
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              paddingHorizontal: hp(2),
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              paddingHorizontal: wp(1),
-            }}>
-            <Text style={{fontSize: hp(3), color: 'black'}}>Quantity</Text>
-            <Text style={{fontSize: hp(3), color: 'black'}}>100</Text>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginTop: hp(2),
-            }}>
-            <Image
-              source={require('./../Assets/Img/sub.png')}
-              style={{width: 35, height: 35}}
-            />
-            <Slider
-              style={{width: 170, height: 30}}
-              minimumTrackTintColor={'#3FCC97'}
-              maximumTrackTintColor={'grey'}
-              thumbTintColor={'#3FCC97'}
-            />
-            <Image
-              source={require('./../Assets/Img/plus.png')}
-              style={{width: 35, height: 35}}
-            />
+            <View
+              style={{
+                flexDirection: 'row',
+                paddingHorizontal: hp(2),
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingHorizontal: wp(1),
+              }}>
+              <Text style={{fontSize: hp(3), color: 'black'}}>Quantity</Text>
+              <Text style={{fontSize: hp(3), color: 'black'}}>{Quantity}</Text>
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginTop: hp(2),
+              }}>
+              <Image
+                source={require('./../Assets/Img/sub.png')}
+                style={{width: 35, height: 35}}
+              />
+              <Slider
+                style={{width: 170, height: 30}}
+                minimumTrackTintColor={'#3FCC97'}
+                maximumTrackTintColor={'grey'}
+                thumbTintColor={'#3FCC97'}
+                minimumValue={0}
+                maximumValue={5000}
+                value={Quantity}
+                onValueChange={setQunatity}
+                step={1}
+              />
+              <Image
+                source={require('./../Assets/Img/plus.png')}
+                style={{width: 35, height: 35}}
+              />
+            </View>
           </View>
         </View>
       </View>
+
       <View style={styles.orderBookContainer}>
         <Image
           source={require('./../Assets/Img/openBook.png')}
