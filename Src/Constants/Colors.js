@@ -8,6 +8,7 @@ const Colours = {
   black: 'black',
   white: 'white',
   lightgreen: '#3FCC97',
+  primaryred:'#E0282D',
 };
 
 export default Colours;

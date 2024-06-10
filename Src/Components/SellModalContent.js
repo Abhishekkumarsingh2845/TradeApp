@@ -2,16 +2,15 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {hp, wp} from '../Utlis/Responsive';
 import Slider from '@react-native-community/slider';
+import Colours from '../Constants/Colors';
 
 const SellModalContent = () => {
   const [activeButton, setActiveButton] = useState(null);
 
-  // Function to handle press on SELL button
   const handleSellPress = () => {
     setActiveButton('sell');
   };
 
-  // Function to handle press on BUY button
   const handleBuyPress = () => {
     setActiveButton('buy');
   };
@@ -71,102 +70,124 @@ const SellModalContent = () => {
           </Text>
         </TouchableOpacity>
       </View>
+
       <View
         style={{
           marginTop: hp(5),
           borderWidth: 0.3,
           borderRadius: 15,
           borderColor: 'grey',
-          marginHorizontal:5,
-         
+          marginHorizontal: 5,
           height: '35%',
         }}>
         <View
           style={{
             paddingHorizontal: 12,
-            flexDirection: 'row',
             justifyContent: 'space-between',
             marginTop: hp(2),
           }}>
-          <View style={{justifyContent: 'space-between'}}>
-            <Text style={{fontSize: hp(2.7), color: 'black'}}>Price</Text>
-            <View style={{alignItems: 'flex-start', marginTop: hp(2)}}>
-              <Image
-                source={require('./../Assets/Img/sub.png')}
-                style={{width: 35, height: 35}}
-              />
-            </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              paddingHorizontal: hp(2),
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              paddingHorizontal: wp(1),
+            }}>
+            <Text style={{fontSize: hp(3), color: 'black'}}>Price</Text>
+            <Text style={{fontSize: hp(3), color: 'black'}}>$2509.75</Text>
           </View>
           <View
             style={{
-              alignSelf: 'center',
-              marginTop: 35,
-             
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: hp(2),
             }}>
-            <Slider style={{width: 170}} 
-            minimumTrackTintColor={"#3FCC97"} 
-            maximumTrackTintColor={"grey"}
-            thumbTintColor={'#3FCC97'}/>
-          </View>
-          <View style={{justifyContent: 'space-between'}}>
-            <Text style={{fontSize: hp(2.7), color: 'black'}}>$2,509.75</Text>
-            <View style={{alignItems: 'flex-end'}}>
-              <Image
-                source={require('./../Assets/Img/plus.png')}
-                style={{width: 35, height: 35}}
-              />
-            </View>
+            <Image
+              source={require('./../Assets/Img/sub.png')}
+              style={{width: 35, height: 35}}
+            />
+            <Slider
+              style={{width: 170, height: 30}}
+              minimumTrackTintColor={'#3FCC97'}
+              maximumTrackTintColor={'grey'}
+              thumbTintColor={'#3FCC97'}
+            />
+            <Image
+              source={require('./../Assets/Img/plus.png')}
+              style={{width: 35, height: 35}}
+            />
           </View>
         </View>
         <View
           style={{
             paddingHorizontal: 12,
-            flexDirection: 'row',
             justifyContent: 'space-between',
             marginTop: hp(2),
           }}>
-          <View style={{justifyContent: 'space-between'}}>
-            <Text style={{fontSize: hp(2.7), color: 'black'}}>Quantity</Text>
-            <View style={{alignItems: 'flex-start', marginTop: hp(2)}}>
-              <Image
-                source={require('./../Assets/Img/sub.png')}
-                style={{width: 35, height: 35}}
-              />
-            </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              paddingHorizontal: hp(2),
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              paddingHorizontal: wp(1),
+            }}>
+            <Text style={{fontSize: hp(3), color: 'black'}}>Quantity</Text>
+            <Text style={{fontSize: hp(3), color: 'black'}}>100</Text>
           </View>
           <View
             style={{
-              alignSelf: 'center',
-              marginTop: 35,
-             
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: hp(2),
             }}>
-            <Slider style={{width: 170}} 
-            minimumTrackTintColor={"#3FCC97"} 
-            maximumTrackTintColor={"grey"}
-            thumbTintColor={'#3FCC97'}/>
-          </View>
-          <View style={{justifyContent: 'space-between'}}>
-            <Text style={{fontSize: hp(2.7), color: 'black'}}>100</Text>
-            <View style={{alignItems: 'flex-end'}}>
-              <Image
-                source={require('./../Assets/Img/plus.png')}
-                style={{width: 35, height: 35}}
-              />
-            </View>
+            <Image
+              source={require('./../Assets/Img/sub.png')}
+              style={{width: 35, height: 35}}
+            />
+            <Slider
+              style={{width: 170, height: 30}}
+              minimumTrackTintColor={'#3FCC97'}
+              maximumTrackTintColor={'grey'}
+              thumbTintColor={'#3FCC97'}
+            />
+            <Image
+              source={require('./../Assets/Img/plus.png')}
+              style={{width: 35, height: 35}}
+            />
           </View>
         </View>
       </View>
-      <View style={{marginTop:hp(4),borderWidth:1,borderRadius:10,height:40,marginHorizontal:4,flexDirection:'row',alignItems:'center'}}>
-    <Image source ={require("./../Assets/Img/openBook.png")} style={{width:25,height:25,resizeMode:'contain',marginLeft:15}}/>
-    <Text style={{color:'black',marginLeft:10}}>Order Book</Text>
-    <Image source={require("./../Assets/Img/chevron_right.png")} style={{width:20,height:20,resizeMode:'contain',position:'absolute',right:10}}/>
+      <View style={styles.orderBookContainer}>
+        <Image
+          source={require('./../Assets/Img/openBook.png')}
+          style={styles.orderBookIcon}
+        />
+        <Text style={styles.orderBookText}>Order Book</Text>
+        <Image
+          source={require('./../Assets/Img/chevron_right.png')}
+          style={styles.chevronIcon}
+        />
       </View>
-      <View style={{marginTop:hp(2),flexDirection:'row',alignSelf:'center',}}>
-        <Text style={{color:'black'}}>Advanced Options</Text>
-        <Image source={require("./../Assets/Img/chevron_right.png")} style={{width:20,height:20,resizeMode:'contain'}}/>
+      <View style={styles.advancedOptionsContainer}>
+        <Text style={styles.advancedOptionsText}>Advanced Options</Text>
+        <Image
+          source={require('./../Assets/Img/chevron_right.png')}
+          style={styles.chevronIconn}
+        />
       </View>
-      <View style={{marginTop:hp(2),backgroundColor:'red',marginHorizontal:15}}>
-<Text>aaa</Text>
+      <View style={styles.swipeContainer}>
+        <Image
+          source={require('./../Assets/Img/swipe.png')}
+          style={styles.swipeIcon}
+        />
+        <Text style={styles.swipeText}>Swipe for Yes</Text>
+      </View>
+      <View style={styles.balanceContainer}>
+        <Text style={styles.balanceText}>Available Balance: $10.00</Text>
       </View>
     </View>
   );
@@ -234,7 +255,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: hp(5),
     width: '95%',
-
     borderRadius: 32,
     alignItems: 'center',
     alignSelf: 'center',
@@ -261,6 +281,116 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   activeButton: {
-    backgroundColor: 'red',
+    backgroundColor: Colours.primaryred,
+  },
+  sliderContainer: {
+    marginTop: hp(5),
+    borderWidth: 0.3,
+    borderRadius: 15,
+    borderColor: 'grey',
+    marginHorizontal: 5,
+    height: '35%',
+  },
+  sliderContent: {
+    paddingHorizontal: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: hp(2),
+  },
+  sliderLabel: {
+    justifyContent: 'space-between',
+  },
+  sliderLabelText: {
+    fontSize: hp(2.7),
+    color: 'black',
+  },
+  slider: {
+    width: 170,
+    alignSelf: 'center',
+    marginTop: 35,
+  },
+  sliderValue: {
+    fontSize: hp(2.7),
+    color: 'black',
+  },
+  iconContainer: {
+    alignItems: 'flex-start',
+    marginTop: hp(2),
+  },
+  icon: {
+    width: 35,
+    height: 35,
+  },
+  orderBookContainer: {
+    marginTop: hp(4),
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 40,
+    marginHorizontal: 4,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  orderBookIcon: {
+    width: 25,
+    height: 25,
+    resizeMode: 'contain',
+    marginLeft: 15,
+  },
+  orderBookText: {
+    color: 'black',
+    marginLeft: 10,
+  },
+  chevronIcon: {
+    width: 15,
+    height: 15,
+    resizeMode: 'contain',
+    position: 'absolute',
+    right: 10,
+  },
+  advancedOptionsContainer: {
+    marginTop: hp(3),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    paddingHorizontal: 85,
+  },
+  chevronIconn: {
+    width: 15,
+    height: 15,
+    resizeMode: 'contain',
+  },
+
+  advancedOptionsText: {
+    color: 'black',
+    fontSize: hp(2.5),
+  },
+  swipeContainer: {
+    marginTop: hp(3),
+    backgroundColor: Colours.primaryred,
+    marginHorizontal: wp(4),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  swipeIcon: {
+    resizeMode: 'contain',
+    width: 35,
+    height: 35,
+    position: 'absolute',
+    left: 7,
+  },
+  swipeText: {
+    fontSize: hp(3),
+    color: 'white',
+  },
+  balanceContainer: {
+    marginTop: hp(2),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  balanceText: {
+    color: 'black',
   },
 });
