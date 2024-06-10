@@ -30,12 +30,17 @@ const SignIn = ({navigation}) => {
           <Text style={styles.logoText}>{Strings.welcome}</Text>
         </View>
 
-        <Input placeholder={Strings.email} />
+        <Input placeholder={Strings.email} placeholderColour={Colours.black} />
 
-        <Input placeholder={Strings.password} isPassword={true} />
+        <Input
+          placeholder={Strings.password}
+          isPassword={true}
+          placeholderColour={Colours.black}
+        />
 
         <View style={styles.forgotPasswordContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ForgotPasswordEmail')}>
             <Text style={styles.forgotPasswordText}>
               {Strings.forgotPassword}
             </Text>
@@ -43,23 +48,36 @@ const SignIn = ({navigation}) => {
         </View>
 
         <PrimaryButton title={Strings.logIn} />
-
-        <PrimaryButton
-          onPress={() => bottomSheetRef?.current?.open()}
-          title={Strings.loginOtp}
-          textStyle={{color: Colours.black}}
-          btnStyle={{
-            backgroundColor: Colours.white,
-            borderWidth: 0.3,
-            borderColor: Colours.black,
-          }}
-        />
-
+        <View>
+          <PrimaryButton
+            onPress={() => bottomSheetRef?.current?.open()}
+            title={Strings.loginOtp}
+            textStyle={{color: Colours.black}}
+            btnStyle={{
+              backgroundColor: Colours.white,
+              borderWidth: 0.3,
+              borderColor: Colours.black,
+            }}
+          />
+          <BottomSheet
+            ref={bottomSheetRef}
+            height={270}
+            closeOnDragDown={false}
+            closeOnPressMask={true}
+            customStyles={{
+              container: {
+                borderTopLeftRadius: 40,
+                borderTopRightRadius: 40,
+              },
+            }}>
+            <OTPModal />
+          </BottomSheet>
+        </View>
         <View style={styles.SignUpContainer}>
           <TouchableOpacity>
             <Text style={styles.newUserText}>{Strings.newUser}</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
             <Text style={styles.signUpText}>{Strings.signUpNow}</Text>
           </TouchableOpacity>
         </View>

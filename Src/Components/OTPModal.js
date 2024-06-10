@@ -12,47 +12,37 @@ import PrimaryButton from './PrimaryButton.js';
 import Strings from '../Constants/Strings.js';
 import Colours from '../Constants/Colors.js';
 
-
-
-
-
-
 const OTPModal = () => {
-
-  return(
+  return (
     <KeyboardAvoidingView style={styles.modalContent}>
-    <ModalHeader />
-    <View style={styles.otpContainer}>
-      <OTPInput defaultValue='' />
-    </View>
-    <PrimaryButton title={Strings.verifyotp} />
-    <ResendOTP />
-  </KeyboardAvoidingView>
-  )
-
-}
+      <ModalHeader />
+      <View style={styles.otpContainer}>
+        <OTPInput defaultValue='' />
+      </View>
+      <PrimaryButton title={Strings.verifyotp} />
+      <ResendOTP />
+    </KeyboardAvoidingView>
+  );
+};
 
 const ModalHeader = () => {
-  return(
+  return (
     <View style={styles.modalHeader}>
-    <Text style={styles.headerText}>{Strings.entercode}</Text>
-    <Text style={styles.headerText}>{Strings.enteremail}</Text>
-    <Text style={styles.headerText}>{Strings.enterphone}</Text>
-  </View>
-  )
-}
-
-
+      <Text style={styles.headerText}>{Strings.entercode}</Text>
+      <Text style={styles.headerText}>{Strings.enteremail}</Text>
+      <Text style={styles.headerText}>{Strings.enterphone}</Text>
+    </View>
+  );
+};
 
 const ResendOTP = () => {
-
-  return(
-  <TouchableOpacity style={styles.resendContainer}>
-    <Text style={styles.resendText}>{Strings.didnototp} </Text>
-    <Text style={styles.resendLink}>{Strings.resendotp}</Text>
-  </TouchableOpacity>
-  )
-}
+  return (
+    <TouchableOpacity style={styles.resendContainer}>
+      <Text style={styles.resendText}>{Strings.didnototp} </Text>
+      <Text style={styles.resendLink}>{Strings.resendotp}</Text>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   root: {
@@ -112,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OTPModal
+export default OTPModal;

@@ -17,7 +17,7 @@ const App = () => {
         ref={phoneInput}
         defaultValue={phoneNumber}
         codeTextStyle={styles.countryCode}
-        defaultCode="US"
+        defaultCode="IN"
         layout="first"
         onChangeText={text => {
           setPhoneNumber(text);
@@ -27,11 +27,11 @@ const App = () => {
         }}
         withDarkTheme
         withShadow
-        autoFocus
         containerStyle={styles.phoneInputContainer}
         textContainerStyle={styles.textContainer}
         textInputStyle={styles.textInput}
         flagButtonStyle={styles.flagButton}
+        placeholder="    "
       />
     </View>
   );
