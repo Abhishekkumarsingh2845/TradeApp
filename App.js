@@ -89,54 +89,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import SellScreen from './Src/Screens/SellScreen'
+import AdvanceOption from './Src/Components/AdvanceOption'
 
 const App = () => {
   return (
-    <View style={{flex:1}}>
+    <View style={{flex:1,backgroundColor:'white'}}>
      <SellScreen/>
+     {/* <AdvanceOption/> */}
     </View>
   )
 }
 
 export default App
-
-// const styles = StyleSheet.create({})
-
-// import React, { useState } from 'react';
-// import { StyleSheet, View, Text } from 'react-native';
-// import Slider from '@react-native-community/slider';
-
-// const SliderExample = () => {
-//   const [value, setValue] = useState(0);
-
-//   return (
-//     <View style={styles.container}>
-//       <Text>Value: {value}</Text>
-//       <Slider
-//         style={styles.slider}
-//         minimumValue={0}
-//         maximumValue={100}
-//         step={1}
-//         value={value}
-//         onValueChange={setValue}
-//         minimumTrackTintColor="#1EB1FC"
-//         maximumTrackTintColor="#d3d3d3"
-//         thumbTintColor="#1EB1FC"
-//       />
-//     </View>
-//   );
-// };
-
-// export default SliderExample;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   slider: {
-//     width: 300,
-//     height: 40,
-//   },
-// });

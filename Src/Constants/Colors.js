@@ -9,6 +9,9 @@ const Colours = {
   white: 'white',
   lightgreen: '#3FCC97',
   primaryred:'#E0282D',
+  greyshade1:'#DFE2E4',
+  greyshades2:'#6C757D',
+
 };
 
 export default Colours;
