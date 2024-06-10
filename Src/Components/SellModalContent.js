@@ -123,10 +123,12 @@ const SellModalContent = ({navigation}) => {
                   alignItems: 'center',
                   marginTop: hp(2),
                 }}>
+                  <TouchableOpacity>
                 <Image
                   source={require('./../Assets/Img/sub.png')}
                   style={{width: 35, height: 35}}
                 />
+                </TouchableOpacity>
                 <Slider
                   style={{width: 170, height: 30}}
                   minimumTrackTintColor={'#3FCC97'}
@@ -138,10 +140,12 @@ const SellModalContent = ({navigation}) => {
                   onValueChange={setPrice}
                   step={1}
                 />
+                <TouchableOpacity>
                 <Image
                   source={require('./../Assets/Img/plus.png')}
                   style={{width: 35, height: 35}}
                 />
+                </TouchableOpacity>
               </View>
             </View>
             <View
@@ -170,10 +174,12 @@ const SellModalContent = ({navigation}) => {
                   alignItems: 'center',
                   marginTop: hp(2),
                 }}>
+                  <TouchableOpacity>
                 <Image
                   source={require('./../Assets/Img/sub.png')}
                   style={{width: 35, height: 35}}
                 />
+                </TouchableOpacity>
                 <Slider
                   style={{width: 170, height: 30}}
                   minimumTrackTintColor={'#3FCC97'}
@@ -185,16 +191,18 @@ const SellModalContent = ({navigation}) => {
                   onValueChange={setQunatity}
                   step={1}
                 />
+                <TouchableOpacity>
                 <Image
                   source={require('./../Assets/Img/plus.png')}
                   style={{width: 35, height: 35}}
                 />
+                </TouchableOpacity>
               </View>
             </View>
           </View>
         </View>
 
-        <View style={styles.orderBookContainer}>
+        <TouchableOpacity style={styles.orderBookContainer}>
           <Image
             source={require('./../Assets/Img/openBook.png')}
             style={styles.orderBookIcon}
@@ -204,7 +212,7 @@ const SellModalContent = ({navigation}) => {
             source={require('./../Assets/Img/chevron_right.png')}
             style={styles.chevronIcon}
           />
-        </View>
+        </TouchableOpacity>
         <View>
           <TouchableOpacity
             style={styles.advancedOptionsContainer}
@@ -217,13 +225,13 @@ const SellModalContent = ({navigation}) => {
           </TouchableOpacity>
           {showComponent && <AdvanceOption />}
         </View>
-        <View style={styles.swipeContainer}>
+        <TouchableOpacity style={styles.swipeContainer}>
           <Image
             source={require('./../Assets/Img/swipe.png')}
             style={styles.swipeIcon}
           />
           <Text style={styles.swipeText}>Swipe for Yes</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.balanceContainer}>
           <Text style={styles.balanceText}>Available Balance: $10.00</Text>
         </View>
@@ -361,13 +369,15 @@ const styles = StyleSheet.create({
     height: 35,
   },
   orderBookContainer: {
-    marginTop: hp(4),
+    marginTop: hp(1.5),
     borderWidth: 1,
     borderRadius: 10,
-    height: 40,
+    paddingVertical:hp(1.5),
+   
     marginHorizontal: 4,
     flexDirection: 'row',
     alignItems: 'center',
+   
   },
   orderBookIcon: {
     width: 25,
