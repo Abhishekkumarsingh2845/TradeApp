@@ -11,13 +11,16 @@ import React from 'react';
 import Colours from '../Constants/Colors';
 import {hp, wp} from '../Utlis/Responsive';
 import Strings from '../Constants/Strings';
+import BottomSheet from 'react-native-raw-bottom-sheet';
+import SellModalContent from '../Components/SellModalContent';
 
 const Home = () => {
+    const bottomSheetRef = React.useRef(null);
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={Colours.white} />
       <View style={styles.header}>
-        <View>
+        <View style={{}}>
           <Text style={styles.marketText}>
             Market is down <Text style={styles.marketDownText}>-11.17%</Text>
           </Text>
@@ -102,7 +105,7 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}>
+                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -141,7 +144,7 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}>
+                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -180,7 +183,7 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}>
+                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -219,7 +222,7 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}>
+                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -228,46 +231,23 @@ const Home = () => {
             </View>
           </View>
         </View>
-        <View style={styles.cardContainer}>
-          <View style={styles.card}>
-            <View style={styles.cardHeader}>
-              <Image
-                source={require('./../Assets/Img/goto.png')}
-                style={styles.cardImage}
-              />
-              <View style={styles.textRow}>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={styles.baseText}>VEECS</Text>
-                  <Text style={styles.superscript}>(56 AUD/Unit)</Text>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={{fontSize: hp(2), color: 'grey'}}>
-                    $200/100U US $200.00
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.cardRightText}>
-                <Text style={{fontSize: hp(2.5), color: 'black'}}>
-                  $2,509.75
-                </Text>
-                <Text
-                  style={{fontSize: hp(2), color: 'black', color: '#21BF73'}}>
-                  +9.77%
-                </Text>
-              </View>
-            </View>
-            <View style={styles.cardActions}>
-              <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}>
-                <Text style={styles.actionButtonText}>SELL</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
-                <Text style={styles.actionButtonText}>BUY</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
+       
+        
+       
       </ScrollView>
+      <BottomSheet
+        ref={bottomSheetRef}
+        height={570}
+        closeOnDragDown={false}
+        closeOnPressMask={true}
+        customStyles={{
+          container: {
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+          },
+        }}>
+        <SellModalContent />
+      </BottomSheet>
     </View>
   );
 };
@@ -296,7 +276,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: hp(2),
     color: Colours.grey,
-    marginTop: hp(0.4),
+   
   },
   iconContainer: {
     justifyContent: 'center',
@@ -316,7 +296,7 @@ const styles = StyleSheet.create({
     color: 'black',
     paddingHorizontal: wp(3.5),
     marginVertical: hp(1),
-    fontWeight: '400',
+    fontWeight: '500',
   },
   scrollView: {
     paddingHorizontal: wp(2),

@@ -77,6 +77,7 @@
 //           component={ForgotPasswordEmail2}
 //         />
 //         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+
 //       </Stack.Navigator>
 //     </NavigationContainer>
 //   );
@@ -84,23 +85,8 @@
 
 // export default App;
 
-// import { StyleSheet, Text, View } from 'react-native'
-// import React from 'react'
-// import SellScreen from './Src/Screens/SellScreen'
-// import AdvanceOption from './Src/Components/AdvanceOption'
-// import BottomTab from './Src/Navigations/BottomTab'
-// import BottomTabCom from './Src/Components/BottomTabCom'
 
-// const App = () => {
-//   return (
-//     <View style={{flex:1,backgroundColor:'white'}}>
-//      {/* <SellScreen/> */}
 
-//     </View>
-//   )
-// }
-
-// export default App
 
 import {View, Text} from 'react-native';
 import React from 'react';
