@@ -1,20 +1,46 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import React, {useState} from 'react';
 import {hp, wp} from '../Utlis/Responsive';
 import Slider from '@react-native-community/slider';
 import Colours from '../Constants/Colors';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 import AdvanceOption from './AdvanceOption';
 
 const SellModalContent = ({navigation}) => {
   const [showComponent, setShowComponent] = useState(false);
+  const [quantity, setQuantity] = useState(0);
+  const [activeButton, setActiveButton] = useState('sell');
+  const [price, setPrice] = useState(0);
 
+  const increasePrice = () => {
+    setPrice(price + 1);
+  };
+
+  const decreasePrice = () => {
+    if (price > 0) {
+      setPrice(price - 1);
+    }
+  };
+
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
   const handleTextPress = () => {
     setShowComponent(!showComponent);
   };
-  const [activeButton, setActiveButton] = useState('sell');
-  const [price, setPrice] = useState(0);
-  const [Quantity, setQunatity] = useState(0);
 
   const handleSellPress = () => {
     setActiveButton('sell');
@@ -123,11 +149,11 @@ const SellModalContent = ({navigation}) => {
                   alignItems: 'center',
                   marginTop: hp(2),
                 }}>
-                  <TouchableOpacity>
-                <Image
-                  source={require('./../Assets/Img/sub.png')}
-                  style={{width: 35, height: 35}}
-                />
+                <TouchableOpacity onPress={decreasePrice}>
+                  <Image
+                    source={require('./../Assets/Img/sub.png')}
+                    style={{width: 35, height: 35}}
+                  />
                 </TouchableOpacity>
                 <Slider
                   style={{width: 170, height: 30}}
@@ -140,11 +166,11 @@ const SellModalContent = ({navigation}) => {
                   onValueChange={setPrice}
                   step={1}
                 />
-                <TouchableOpacity>
-                <Image
-                  source={require('./../Assets/Img/plus.png')}
-                  style={{width: 35, height: 35}}
-                />
+                <TouchableOpacity onPress={increasePrice}>
+                  <Image
+                    source={require('./../Assets/Img/plus.png')}
+                    style={{width: 35, height: 35}}
+                  />
                 </TouchableOpacity>
               </View>
             </View>
@@ -164,7 +190,7 @@ const SellModalContent = ({navigation}) => {
                 }}>
                 <Text style={{fontSize: hp(3), color: 'black'}}>Quantity</Text>
                 <Text style={{fontSize: hp(3), color: 'black'}}>
-                  {Quantity}
+                  {quantity}
                 </Text>
               </View>
               <View
@@ -174,11 +200,11 @@ const SellModalContent = ({navigation}) => {
                   alignItems: 'center',
                   marginTop: hp(2),
                 }}>
-                  <TouchableOpacity>
-                <Image
-                  source={require('./../Assets/Img/sub.png')}
-                  style={{width: 35, height: 35}}
-                />
+                <TouchableOpacity onPress={decreaseQuantity}>
+                  <Image
+                    source={require('./../Assets/Img/sub.png')}
+                    style={{width: 35, height: 35}}
+                  />
                 </TouchableOpacity>
                 <Slider
                   style={{width: 170, height: 30}}
@@ -187,15 +213,15 @@ const SellModalContent = ({navigation}) => {
                   thumbTintColor={'#3FCC97'}
                   minimumValue={0}
                   maximumValue={5000}
-                  value={Quantity}
-                  onValueChange={setQunatity}
+                  value={quantity}
+                  onValueChange={setQuantity}
                   step={1}
                 />
-                <TouchableOpacity>
-                <Image
-                  source={require('./../Assets/Img/plus.png')}
-                  style={{width: 35, height: 35}}
-                />
+                <TouchableOpacity onPress={increaseQuantity}>
+                  <Image
+                    source={require('./../Assets/Img/plus.png')}
+                    style={{width: 35, height: 35}}
+                  />
                 </TouchableOpacity>
               </View>
             </View>
@@ -372,12 +398,11 @@ const styles = StyleSheet.create({
     marginTop: hp(1.5),
     borderWidth: 1,
     borderRadius: 10,
-    paddingVertical:hp(1.5),
-   
+    paddingVertical: hp(1.5),
+
     marginHorizontal: 4,
     flexDirection: 'row',
     alignItems: 'center',
-   
   },
   orderBookIcon: {
     width: 25,

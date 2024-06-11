@@ -13,6 +13,7 @@ import Colours from '../Constants/Colors';
 const AdvanceOption = () => {
   const [selected, setSelected] = useState(null);
   const [isEnabled, setIsEnabled] = useState(false);
+ 
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.container}>
