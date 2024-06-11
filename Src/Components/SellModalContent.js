@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     padding: hp(2),
-    paddingHorizontal: wp(2),
+    paddingHorizontal: wp(1),
   },
   contentRow: {
     marginHorizontal: wp(5),
