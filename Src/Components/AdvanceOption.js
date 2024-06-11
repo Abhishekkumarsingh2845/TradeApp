@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   },
   autoCancelButton: {
     backgroundColor: 'white',
-    elevation: 3,
+    elevation: 5,
     paddingVertical: hp(0.5),
     borderRadius: 12,
     marginHorizontal: wp(-3),

@@ -115,8 +115,8 @@ const SellModalContent = ({navigation}) => {
             alignContent: 'center',
             justifyContent: 'center',
             marginVertical: hp(3),
-            marginHorizontal: wp(4),
-            elevation: 10,
+            marginHorizontal: wp(2.7),
+            elevation: 5,
             borderRadius: 10,
           }}>
           <View
@@ -327,12 +327,12 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     marginTop: hp(5),
-    width: '95%',
+    width: '90%',
     borderRadius: 32,
     alignItems: 'center',
     alignSelf: 'center',
     backgroundColor: 'whitesmoke',
-    elevation: 10,
+    elevation: 5,
   },
   button: {
     flex: 1,
@@ -356,36 +356,36 @@ const styles = StyleSheet.create({
   activeButton: {
     backgroundColor: Colours.primaryred,
   },
-  sliderContainer: {
-    marginTop: hp(5),
-    borderWidth: 0.3,
-    borderRadius: 15,
-    borderColor: 'grey',
-    marginHorizontal: 5,
-    height: '35%',
-  },
-  sliderContent: {
-    paddingHorizontal: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: hp(2),
-  },
-  sliderLabel: {
-    justifyContent: 'space-between',
-  },
-  sliderLabelText: {
-    fontSize: hp(2.7),
-    color: 'black',
-  },
-  slider: {
-    width: 170,
-    alignSelf: 'center',
-    marginTop: 35,
-  },
-  sliderValue: {
-    fontSize: hp(2.7),
-    color: 'black',
-  },
+  // sliderContainer: {
+  //   marginTop: hp(5),
+  //   borderWidth: 0.3,
+  //   borderRadius: 15,
+  //   borderColor: 'grey',
+  //   marginHorizontal: 5,
+  //   height: '30%',
+  // },
+  // sliderContent: {
+  //   paddingHorizontal: 12,
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-between',
+  //   marginTop: hp(2),
+  // },
+  // sliderLabel: {
+  //   justifyContent: 'space-between',
+  // },
+  // sliderLabelText: {
+  //   fontSize: hp(2.7),
+  //   color: 'black',
+  // },
+  // slider: {
+  //   width: 170,
+  //   alignSelf: 'center',
+  //   marginTop: 35,
+  // },
+  // sliderValue: {
+  //   fontSize: hp(2.7),
+  //   color: 'black',
+  // },
   iconContainer: {
     alignItems: 'flex-start',
     marginTop: hp(2),
