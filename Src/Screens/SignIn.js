@@ -55,13 +55,13 @@ const SignIn = ({navigation}) => {
             textStyle={{color: Colours.black}}
             btnStyle={{
               backgroundColor: Colours.white,
-              borderWidth: 0.3,
+              borderWidth: 0.2,
               borderColor: Colours.black,
             }}
           />
           <BottomSheet
             ref={bottomSheetRef}
-            height={270}
+            height={hp(40)}
             closeOnDragDown={false}
             closeOnPressMask={true}
             customStyles={{
