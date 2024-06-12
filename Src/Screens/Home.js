@@ -15,7 +15,7 @@ import BottomSheet from 'react-native-raw-bottom-sheet';
 import SellModalContent from '../Components/SellModalContent';
 
 const Home = () => {
-    const bottomSheetRef = React.useRef(null);
+  const bottomSheetRef = React.useRef(null);
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={Colours.white} />
@@ -105,7 +105,8 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
+                style={[styles.actionButton, styles.sellButton]}
+                onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -144,7 +145,48 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
+                style={[styles.actionButton, styles.sellButton]}
+                onPress={() => bottomSheetRef?.current?.open()}>
+                <Text style={styles.actionButtonText}>SELL</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
+                <Text style={styles.actionButtonText}>BUY</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+            <View style={styles.cardHeader}>
+              <Image
+                source={require('./../Assets/Img/goto.png')}
+                style={styles.cardImage}
+              />
+              <View style={styles.textRRow}>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={styles.baseText}>VEECS</Text>
+                  <Text style={styles.superscript}>(56 AUD/Unit)</Text>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={{fontSize: hp(2), color: 'grey'}}>
+                    $200/100U US $200.00
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.cardRightText}>
+                <Text style={{fontSize: hp(2.5), color: 'black'}}>
+                  $2,509.75
+                </Text>
+                <Text
+                  style={{fontSize: hp(2), color: 'black', color: '#21BF73'}}>
+                  +9.77%
+                </Text>
+              </View>
+            </View>
+            <View style={styles.cardActions}>
+              <TouchableOpacity
+                style={[styles.actionButton, styles.sellButton]}
+                onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -183,7 +225,8 @@ const Home = () => {
             </View>
             <View style={styles.cardActions}>
               <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
+                style={[styles.actionButton, styles.sellButton]}
+                onPress={() => bottomSheetRef?.current?.open()}>
                 <Text style={styles.actionButtonText}>SELL</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
@@ -192,48 +235,6 @@ const Home = () => {
             </View>
           </View>
         </View>
-        <View style={styles.cardContainer}>
-          <View style={styles.card}>
-            <View style={styles.cardHeader}>
-              <Image
-                source={require('./../Assets/Img/goto.png')}
-                style={styles.cardImage}
-              />
-              <View style={styles.textRow}>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={styles.baseText}>VEECS</Text>
-                  <Text style={styles.superscript}>(56 AUD/Unit)</Text>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={{fontSize: hp(2), color: 'grey'}}>
-                    $200/100U US $200.00
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.cardRightText}>
-                <Text style={{fontSize: hp(2.5), color: 'black'}}>
-                  $2,509.75
-                </Text>
-                <Text
-                  style={{fontSize: hp(2), color: 'black', color: '#21BF73'}}>
-                  +9.77%
-                </Text>
-              </View>
-            </View>
-            <View style={styles.cardActions}>
-              <TouchableOpacity
-                style={[styles.actionButton, styles.sellButton]}  onPress={() => bottomSheetRef?.current?.open()}>
-                <Text style={styles.actionButtonText}>SELL</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.actionButton, styles.buyButton]}>
-                <Text style={styles.actionButtonText}>BUY</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-       
-        
-       
       </ScrollView>
       <BottomSheet
         ref={bottomSheetRef}
@@ -276,7 +277,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: hp(2),
     color: Colours.grey,
-   
   },
   iconContainer: {
     justifyContent: 'center',
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp(2),
     marginVertical: hp(1.5),
   },
-  child: {
+child: {
     paddingHorizontal: wp(13),
     backgroundColor: 'whitesmoke',
     borderRadius: 7,
@@ -367,6 +367,6 @@ const styles = StyleSheet.create({
   },
   actionButtonText: {
     fontSize: 19,
-    color:Colours.white,
+    color: Colours.white,
   },
 });

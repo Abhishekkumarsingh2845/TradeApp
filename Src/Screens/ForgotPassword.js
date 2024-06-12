@@ -44,9 +44,7 @@ const ForgotPassword = ({navigation}) => {
       <PrimaryButton
           title={'UPDATE'}
           btnStyle={styles.button}
-          onPress={() => {
-            navigation.navigate('ForgotPassword2');
-          }}
+          
         />
     </View>
   );

@@ -8,7 +8,7 @@ import SkipDone from '../Components/SkipDone';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const SignUp2 = () => {
+const SignUp2 = ({navigation}) => {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const renderItem = ({item}) => (
     <View style={{marginTop: 12}}>
@@ -87,7 +87,7 @@ const SignUp2 = () => {
         )}
       </View>
       <View style={{position: 'absolute', bottom: 0, width: '100%'}}>
-        <SkipDone />
+        <SkipDone onDonePress={()=>navigation.navigate('BottomTab')} />
       </View>
     </View>
   );
