@@ -291,6 +291,7 @@ const styles = StyleSheet.create({
     borderColor: '#8A8181',
     width: '100%',
     marginVertical: hp(1.5),
+    backgroundColor:'white',
   },
   trendingText: {
     color: 'black',
@@ -301,11 +302,14 @@ const styles = StyleSheet.create({
   scrollView: {
     paddingHorizontal: wp(2),
     marginVertical: hp(1.5),
+    backgroundColor:'white',
+
   },
 child: {
     paddingHorizontal: wp(13),
-    backgroundColor: 'whitesmoke',
-    borderRadius: 7,
+    backgroundColor: 'white',
+    borderRadius: 4,
+    borderColor:'white',
     elevation: 4,
     marginRight: wp(2),
   },

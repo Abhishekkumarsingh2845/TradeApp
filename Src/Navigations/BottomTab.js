@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
 import Portfolio from '../Screens/Portfolio';
 import Setting from '../Screens/Setting';
+import TopTab from './TopTab';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,8 +52,8 @@ const BottomTab = () => {
         }}
       />
       <Tab.Screen
-        name="Portfolio"
-        component={Portfolio}
+        name="TopTab"
+        component={TopTab}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (

@@ -12,6 +12,7 @@ const Colours = {
   greyshade1:'#DFE2E4',
   greyshades2:'#6C757D',
 
+
 };
 
 export default Colours;
